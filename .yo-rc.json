@@ -1,0 +1,26 @@
+{
+  "generator-bbb": {
+    "name": "weather",
+    "testFramework": "jasmine",
+    "moduleStyle": "amd",
+    "indent": {
+      "style": "space",
+      "size": 4
+    },
+    "paths": {
+      "base": ".",
+      "tests": "test",
+      "modules": "app/modules"
+    }
+  },
+  "generator-backbone": {
+    "appPath": "app",
+    "appName": "Weather",
+    "coffee": false,
+    "testFramework": "mocha",
+    "templateFramework": "lodash",
+    "compassBootstrap": true,
+    "includeRequireJS": true
+  },
+  "generator-mocha": {}
+}
