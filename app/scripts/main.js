@@ -14,6 +14,7 @@ require.config({
         underscore: '../bower_components/lodash/dist/lodash',
         bootstrap: '../bower_components/sass-bootstrap/dist/js/bootstrap',
 
+        weatherApp: 'weatherApp',
 
         // Routers
         appRouter: 'routes/appRouter',
@@ -33,10 +34,11 @@ require.config({
 
 require([
     'backbone',
-    'appRouter',
-], function (Backbone, AppRouter) {
+    'weatherApp',
+], function (Backbone, WeatherApp) {
 
-    var appRouter = new AppRouter();
-    Backbone.history.start();
+    new WeatherApp({
+        el: '#weather_app',
+    });
 
 });

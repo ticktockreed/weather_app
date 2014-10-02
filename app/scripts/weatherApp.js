@@ -13,13 +13,13 @@ define([
         template: JST['app/scripts/templates/layout.ejs'],
 
         initialize: function () {
+            this.render();
             var appRouter = new AppRouter();
             Backbone.history.start();
-            this.listenTo(this.model, 'change', this.render);
         },
 
         render: function () {
-            this.$el.html(this.template(this.model.toJSON()));
+            this.$el.html(this.template());
         }
     });
 
