@@ -26,8 +26,9 @@ require.config({
         mdlYQL: 'models/mdlYQL',
 
         // Views
-        viewLayout: 'views/viewLayout',
-        viewAbout: 'views/viewAbout'
+        viewApp: 'views/viewApp',
+        viewAbout: 'views/viewAbout',
+        viewCity: 'views/viewCity',
 
     }
 });

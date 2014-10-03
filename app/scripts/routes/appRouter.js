@@ -3,11 +3,9 @@
 define([
     'jquery',
     'backbone',
-    'viewLayout',
+    'viewApp',
     'viewAbout',
-    'mdlCity',
-    'mdlYQL',
-], function ($, Backbone, ViewLayout, ViewAbout, MdlCity, MdlYQL) {
+], function ($, Backbone, ViewApp, ViewAbout) {
     'use strict';
 
     var appRouter = Backbone.Router.extend({
@@ -17,15 +15,14 @@ define([
         },
         
         home: function() {
-            var mdlCity = new MdlCity();
-            var viewLayout = new ViewLayout({model: mdlCity});
-            viewLayout.render();
+            console.log('Home');
+            var viewApp = new ViewApp;
+            viewApp.render();
         },
         
         about: function() {
-            console.log('About?');
-            var mdlCity = new MdlCity();
-            var viewAbout = new ViewAbout({model: mdlCity});
+            console.log('About');
+            var viewAbout = new ViewAbout;
             viewAbout.render();
         }
 

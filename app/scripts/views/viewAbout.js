@@ -14,11 +14,11 @@ define([
         el: '#weather_app',
 
         initialize: function () {
-            this.listenTo(this.model, 'change', this.render);
+            this.render;
         },
 
         render: function () {
-            this.$el.find('#content').html(this.template(this.model.toJSON()));
+            this.$el.find('#content').html(this.template());
         }
 
     });

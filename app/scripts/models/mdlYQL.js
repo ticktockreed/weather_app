@@ -1,43 +1,58 @@
-define(['jquery',
-        'underscore',
-        'backbone'
-        ],
+define([
+    'underscore', 
+    'backbone'
+], function( _, Backbone) {
+    'use strict';
 
-        function( $, _, Backbone) {
+    var YQLSearch = Backbone.Model.extend({
 
-                var Answers = Backbone.Model.extend({
+        initialize: function(query) {
+            this.search({query: query});
+        },
 
-                        search: function(params, success, error) {
+        search: function(params, success, error) {
 
-                                var urlRoot = 'http://query.yahooapis.com/v1/public/yql';
+            var urlRoot = 'http://query.yahooapis.com/v1/public/yql?q=';
+            var yql = urlRoot + 'select * from weather.forecast where woeid in (select woeid from geo.places where text="' + params.query + '")';
+            yql = yql + "&format=json&diagnostics=true&callback="
 
-                                var yql = 'select * from answers.search where query="' + params.query + '"';
-                                yql = yql + ' and type="resolved"';
+            this.fetch({
+                url: yql,
+                type: 'get',
+                dataType: 'json',
+                success: function(model, response, options) {
+                    var instances = [],
+                        query = response && response.query,
+                        results = query && query.results.channel,
+                            len = results && results.length;
 
-                                this.fetch({
-                                        url: urlRoot + '?q=' + encodeURIComponent(yql) + '&format=json',
-                                        type: 'get',
-                                        dataType: 'jsonp',
-                                        success: function(model, response, options) {
-                                                var instances = [],
-                                                    query = response && response.query,
-                                                    results = query && query.results,
-                                                    question = results && results.Question,
-                                                    len = question && question.length;
-                                                if(question && len) {
-                                                        for(var i=0; i<len; i++) {
-                                                                var q = question[i];
-                                                                instances.push( new Answers(q));
-                                                        }
-                                                }
-                                                success(instances);
-                                        },
-                                        error: function() {
-                                                error(arguments);
-                                        }
-                                });
+                    if (results && len) {
+                        for(var i=0; i<len; i++) {
+                            var q = results[i];
+                            instances.push( new YQLSearch(q));
                         }
-                });
 
-                return Answers;
-        });
+                        console.log('First of multiple', results[0]);
+                    } else {
+                        console.log('single', results);
+                    }
+
+
+                    // _.each(results, function(value, key){
+                    //     console.log(value.location.city);
+                    //     console.log(value.location.country);
+                    //     // console.log(value.location.region);
+                    //     instances.push(value);
+                    // }, this);
+                    console.log(instances);
+
+                },
+                error: function() {
+                    error(arguments);
+                }
+            });
+        }
+    });
+
+    return YQLSearch;
+});
