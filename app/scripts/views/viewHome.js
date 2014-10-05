@@ -17,8 +17,7 @@ define([
         el: '#weather_app',
         cities: [
             'Berlin DE',
-            'Bucharest RO',
-            'Budapest, HU',
+            'Budapest HU',
             'Madrid ES',
             'Paris FR',
             'Rome IT',

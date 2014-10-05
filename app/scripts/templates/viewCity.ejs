@@ -1,27 +1,30 @@
 <% 
-// console.log(item.forecast); 
+console.log(this); 
 %>
 
-<div class="city">
-    <h2 class="name"><%= location.city %></h2>
-    <div class="country"><%= location.country %></div>
-    <div class="day"><%= item.forecast[0].day %></div>
-    <div class="text"><%= item.forecast[0].text %></div>
-    <div class="temp">
-        <div class="high"><%= item.forecast[0].high %></div>
-        <div class="low"><%= item.forecast[0].low %></div>
+<div class="city" id="<%= this.cid %>">
+    <div class="city-pics"></div>
+    <div class="city-content">
+        <h2 class="city-name"><%= location.city %></h2>
+        <div class="city-country"><%= location.country %></div>
+        <div class="city-day"><%= item.forecast[0].day %></div>
+        <div class="city-text"><%= item.forecast[0].text %></div>
+        <div class="city-temp">
+            <div class="city-high"><%= item.forecast[0].high %></div>
+            <div class="city-low"><%= item.forecast[0].low %></div>
+        </div>
     </div>
 
-    <div class="forecast">
+    <div class="city-forecast">
         
     <% for (var i = item.forecast.length - 1; i >= 0; i--) { 
         var day = item.forecast[i];
         %>
-        <div class="day"><%= day.day %></div>
-        <div class="high"><%= day.high %></div>
-        <div class="low"><%= day.low %></div>
-        <div class="text"><%= day.text %></div>
-        <div class="code"><%= day.code %></div>
+        <div class="city-day"><%= day.day %></div>
+        <div class="city-high"><%= day.high %></div>
+        <div class="city-low"><%= day.low %></div>
+        <div class="city-text"><%= day.text %></div>
+        <div class="city-code"><%= day.code %></div>
     <% }; %>
 
     </div>

@@ -1,0 +1,12 @@
+<% 
+// console.log(photos); 
+%>
+
+<% for (var i = 0; i < 3; i++) { 
+// console.log(photos[i]); 
+    var photolink = photos[i].media.m;
+    %>
+    <img class="city-photo-<%= [i] %>" src="<%= photolink %>" />
+
+<% }; %>
+

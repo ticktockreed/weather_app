@@ -1,0 +1,27 @@
+// breakpoints
+
+@mixin bp($point) {
+
+    // general queries
+    @if $point == small-desktop {
+        @media screen and (max-width: 64em) { @content; }
+    }
+    @else if $point == tablet {
+        @media screen and (max-width: 48em) { @content; }
+    }
+
+
+    // orientation queries
+    @if $point == tablet-portrait {
+        @media screen and (max-width: 64em) and (orientation : portrait), screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) { @content; }
+    }
+    @if $point == tablet-landscape {
+        @media screen and (max-width: 64em) and (orientation : landscape), screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation: landscape) { @content; }
+    }
+    @if $point == mobile-portrait {
+        @media screen and (max-width: 47.9375em) and (orientation : portrait), screen and (max-device-width : 767px) and (orientation: portrait) { @content; }
+    }
+    @else if $point == mobile-landscape {
+        @media screen and (max-width: 47.9375em) and (orientation : landscape), screen and (max-device-width : 767px) and (orientation: landscape) { @content; }
+    }
+}

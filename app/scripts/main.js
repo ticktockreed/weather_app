@@ -2,17 +2,13 @@
 'use strict';
 
 require.config({
-    shim: {
-        bootstrap: {
-            deps: ['jquery'],
-            exports: 'jquery'
-        }
-    },
     paths: {
         jquery: '../bower_components/jquery/dist/jquery',
         backbone: '../bower_components/backbone/backbone',
         underscore: '../bower_components/lodash/dist/lodash',
         bootstrap: '../bower_components/sass-bootstrap/dist/js/bootstrap',
+
+        slick: 'libs/slick/slick.min',
 
         weatherApp: 'weatherApp',
 
@@ -24,12 +20,13 @@ require.config({
 
         // Models
         city: 'models/city',
-        mdlYQL: 'models/mdlYQL',
+        flickR: 'models/flickr',
 
         // Views
         viewHome: 'views/viewHome',
         viewAbout: 'views/viewAbout',
         cityView: 'views/viewCity',
+        flickrView: 'views/flickrView',
 
     }
 });
