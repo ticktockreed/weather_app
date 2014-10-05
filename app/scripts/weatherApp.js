@@ -9,7 +9,7 @@ define([
 ], function ($, _, Backbone, JST, AppRouter) {
     'use strict';
 
-    var layoutView = Backbone.View.extend({
+    var weatherApp = Backbone.View.extend({
         template: JST['app/scripts/templates/layout.ejs'],
 
         initialize: function () {
@@ -23,5 +23,5 @@ define([
         }
     });
 
-    return layoutView;
+    return weatherApp;
 });

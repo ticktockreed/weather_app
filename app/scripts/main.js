@@ -20,26 +20,47 @@ require.config({
         appRouter: 'routes/appRouter',
 
         // Collections
+        cities: 'collections/cities',
 
         // Models
-        mdlCity: 'models/mdlCity',
+        city: 'models/city',
         mdlYQL: 'models/mdlYQL',
 
         // Views
         viewApp: 'views/viewApp',
         viewAbout: 'views/viewAbout',
-        viewCity: 'views/viewCity',
+        cityView: 'views/viewCity',
 
     }
 });
 
 require([
     'backbone',
-    'weatherApp',
-], function (Backbone, WeatherApp) {
+    'city',
+    'cities',
+    'cityView',
+], function (Backbone, City, Cities, CityView) {
 
-    new WeatherApp({
-        el: '#weather_app',
+    var city = new City({name: 'London UK'});
+    console.log('City to JSON', city.toJSON());
+
+    var cities = new Cities(city);
+
+    cities.add([{name: 'Paris France'}, {name: 'Berlin Germany'}]);
+    cities.fetch({
+        success : function(data) {
+            // console.log("ON SUCCESS");
+            console.log('success data', data);
+        },
+        error: function(response) {
+            // console.log("ON ERROR");
+            // console.log(response);
+        }
     });
+
+
+    // new WeatherApp({
+    //     el: '#weather_app',
+    // });
 
 });

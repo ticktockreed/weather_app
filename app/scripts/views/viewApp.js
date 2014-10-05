@@ -6,24 +6,14 @@ define([
     'backbone',
     'templates',
     'mdlYQL',
-    'viewCity',
-], function ($, _, Backbone, JST, MdlYQL, ViewCity) {
+    'cityView',
+], function ($, _, Backbone, JST, MdlYQL, CityView) {
     'use strict';
 
     var layoutView = Backbone.View.extend({
         template: JST['app/scripts/templates/layout.ejs'],
 
         el: '#weather_app',
-        cities: [
-            'London UK',
-            'Berlin DE',
-            'Madrid ES',
-            'Rome IT',
-            'Paris FR',
-            'Bucharest RO',
-            'Vienna AT',
-            'Budapest, HU'
-        ],
 
         initialize: function () {
             this.render;
