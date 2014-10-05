@@ -27,7 +27,7 @@ require.config({
         mdlYQL: 'models/mdlYQL',
 
         // Views
-        viewApp: 'views/viewApp',
+        viewHome: 'views/viewHome',
         viewAbout: 'views/viewAbout',
         cityView: 'views/viewCity',
 
@@ -36,31 +36,11 @@ require.config({
 
 require([
     'backbone',
-    'city',
-    'cities',
-    'cityView',
-], function (Backbone, City, Cities, CityView) {
+    'weatherApp',
+], function (Backbone, WeatherApp) {
 
-    var city = new City({name: 'London UK'});
-    console.log('City to JSON', city.toJSON());
-
-    var cities = new Cities(city);
-
-    cities.add([{name: 'Paris France'}, {name: 'Berlin Germany'}]);
-    cities.fetch({
-        success : function(data) {
-            // console.log("ON SUCCESS");
-            console.log('success data', data);
-        },
-        error: function(response) {
-            // console.log("ON ERROR");
-            // console.log(response);
-        }
+    new WeatherApp({
+        el: '#weather_app',
     });
-
-
-    // new WeatherApp({
-    //     el: '#weather_app',
-    // });
 
 });

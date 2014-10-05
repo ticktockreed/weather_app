@@ -11,20 +11,23 @@ define([
     var CityView = Backbone.View.extend({
         template: JST['app/scripts/templates/viewCity.ejs'],
 
-        tagName: 'div',
+        el: '#content',
 
-        id: '',
-
-        className: '',
-
-        events: {},
+        events: {
+            'click': 'showForecast'
+        },
 
         initialize: function () {
-            // this.listenTo(this.model, 'change', this.render);
+            this.listenTo(this.model, 'change', this.render);
         },
 
         render: function () {
-            // this.$el.html(this.template(this.model.toJSON()));
+            this.$el.append(this.template(this.model.toJSON()));
+        },
+
+        showForecast: function(ev) {
+            $('.city').removeClass('open');
+            $(ev.target).parents('.city').addClass('open');
         }
     });
 

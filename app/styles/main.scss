@@ -89,3 +89,11 @@ body {
         border-bottom: 0;
     }
 }
+
+.forecast {
+    height: 0;
+    overflow: hidden;
+    .open & {
+        height: auto;
+    }
+}

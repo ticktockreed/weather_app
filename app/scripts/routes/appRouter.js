@@ -3,9 +3,9 @@
 define([
     'jquery',
     'backbone',
-    'viewApp',
+    'viewHome',
     'viewAbout',
-], function ($, Backbone, ViewApp, ViewAbout) {
+], function ($, Backbone, ViewHome, ViewAbout) {
     'use strict';
 
     var appRouter = Backbone.Router.extend({
@@ -16,8 +16,8 @@ define([
         
         home: function() {
             console.log('Home');
-            var viewApp = new ViewApp;
-            viewApp.render();
+            var viewHome = new ViewHome;
+            viewHome.render();
         },
         
         about: function() {

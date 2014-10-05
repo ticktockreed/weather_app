@@ -1,0 +1,29 @@
+<% 
+// console.log(item.forecast); 
+%>
+
+<div class="city">
+    <h2 class="name"><%= location.city %></h2>
+    <div class="country"><%= location.country %></div>
+    <div class="day"><%= item.forecast[0].day %></div>
+    <div class="text"><%= item.forecast[0].text %></div>
+    <div class="temp">
+        <div class="high"><%= item.forecast[0].high %></div>
+        <div class="low"><%= item.forecast[0].low %></div>
+    </div>
+
+    <div class="forecast">
+        
+    <% for (var i = item.forecast.length - 1; i >= 0; i--) { 
+        var day = item.forecast[i];
+        %>
+        <div class="day"><%= day.day %></div>
+        <div class="high"><%= day.high %></div>
+        <div class="low"><%= day.low %></div>
+        <div class="text"><%= day.text %></div>
+        <div class="code"><%= day.code %></div>
+    <% }; %>
+
+    </div>
+
+</div>

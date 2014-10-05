@@ -5,7 +5,7 @@ define([
     'underscore',
     'backbone',
     'templates',
-    'appRouter'
+    'appRouter',
 ], function ($, _, Backbone, JST, AppRouter) {
     'use strict';
 
