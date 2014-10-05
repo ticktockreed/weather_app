@@ -1,13 +1,19 @@
 .city {
     position: relative;
     height: 100px;
+    overflow: hidden;
+    cursor: pointer;
+
+    &.open {
+        cursor: default;
+    }
 }
 
 .city-content {
     @include box-sizing(border-box);
     position: relative;
     color: #fff;        
-    text-shadow: 1px 1px 1px rgba(#cccccc, 0.8);
+    text-shadow: 1px 1px 1px rgba(#333, 0.8);
     z-index: 2;
     padding: 0 $gutter;
     width: 100%;
@@ -22,19 +28,22 @@
     }
 
     .city-name {
+        line-height: 100px;
 
 
         .city-country {
             display: none;
         }
         .open & {
+            line-height: inherit;
             font-size: 3em;
             position: absolute;
             bottom: 100px;
 
             .city-country {
                 display: block;
-                font-size: 0.5em;
+                font-size: 0.4em;
+                margin-top: 0.2em;
             }
         }
     }

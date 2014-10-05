@@ -23,11 +23,14 @@ console.log(this);
     <% for (var i = item.forecast.length - 1; i >= 0; i--) { 
         var day = item.forecast[i];
         %>
-        <div class="city-day"><%= day.day %></div>
-        <div class="city-high"><%= day.high %>°</div>
-        <div class="city-low"><%= day.low %></div>
-        <div class="city-text"><%= day.text %></div>
-        <div class="city-code"><%= day.code %></div>
+        <div class="city-forecast-inner">
+            <div class="city-forecast-day"><%= day.day %></div>
+            <div class="city-forecast-high"><%= day.high %>°</div>
+            <div class="city-forecast-low"><%= day.low %></div>
+            <div class="city-forecast-icon icon-code-<%= day.code %>">
+                <span class="text"><%= day.text %></span>
+            </div>
+        </div>
     <% }; %>
 
     </div>

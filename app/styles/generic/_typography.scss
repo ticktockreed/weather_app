@@ -5,3 +5,28 @@ h1 {
 h2 {
     font-size: 1.2em;
 }
+
+
+.rte {
+    color: #fff;
+
+    h2  {
+        margin-bottom: 1em;
+        margin-top: 0.5em;
+    }
+    p {
+        line-height: 1.6em;
+    }
+    p + h2 {
+        margin-top: 1.5em;
+    }
+    ul {
+        line-height: 1.6em;
+        padding-left: $gutter/2;
+        margin-bottom: 2em;
+    }
+    li {
+        list-style: disc;
+    }
+
+}

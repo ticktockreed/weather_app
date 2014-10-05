@@ -1,8 +1,51 @@
 
 .city-forecast {
-    position: relative;
-    z-index: 3;
-
-    text-shadow: 1px 1px 1px rgba(#cccccc, 0.8);
     display: none;
+
+    .open & {
+        display: block;
+    }
+    @include box-sizing(border-box);
+    z-index: 3;
+    padding: 7px;
+    position: absolute;
+    bottom: 0;
+    height: 70px;
+    width: 100%;
+    text-shadow: 1px 1px 1px rgba(#333, 0.8);
+}
+
+.city-forecast-day {
+}
+.city-forecast-inner {
+
+    @include box-sizing(border-box);
+    position: relative;
+    display: block;
+    float: left;
+    width: 20%;
+    padding: $gutter/2 $gutter;
+    color: #fff;
+
+    &:before {
+        content: "";
+        width: 1px;
+        background: #fff;
+        position: absolute;
+        height: 40%;
+        right: -1px;
+    }
+
+    &:last-child:before {
+        display: none;
+    }
+
+    .city-forecast-icon {
+        display: none;
+    }
+
+    .city-forecast-low,
+    .city-forecast-icon {
+        display: none;
+    }
 }
