@@ -1,10 +1,10 @@
-#Why Photograph Europe?
+# Why Photograph Europe?
 
-This app will let you see the weather for selected cities across Europe.
-This app allows users to share their experience of European weather.
-We all love browsing through photos.
+This app will let you see the weather for selected cities across Europe augmented with photos tagged with the city's name.
 
-#Future improvements:
+
+
+## Future improvements:
 
 - Share photos
 - Photo carousel
@@ -15,7 +15,7 @@ We all love browsing through photos.
 - Videos
 - Tech used
 
-#Backbone built using Yeoman generator-backbone
+## Backbone built using Yeoman generator-backbone
 - SASS
 - RequireJS
 - Weather feed from YQL
