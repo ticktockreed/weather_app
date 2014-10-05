@@ -3,6 +3,20 @@
     z-index: 0;
     width: 100%;
     height: 100%;
+    
+
+    &:before {
+        content: "";
+        background:linear-gradient(to bottom, rgba(72, 76, 97, 0) 81%, rgba(20, 20, 20, 0.7) 95%);
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 2;
+    }
 
     .city-photo {
         position: absolute;

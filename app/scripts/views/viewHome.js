@@ -16,6 +16,7 @@ define([
 
         el: '#weather_app',
         cities: [
+            'Barcelona ES',
             'Berlin DE',
             'Budapest HU',
             'Madrid ES',
