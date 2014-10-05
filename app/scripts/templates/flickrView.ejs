@@ -6,7 +6,8 @@
 // console.log(photos[i]); 
     var photolink = photos[i].media.m;
     %>
-    <img class="city-photo-<%= [i] %>" src="<%= photolink %>" />
+    <img class="city-photo city-photo-<%= [i] %>" src="<%= photolink %>" />
+    <!-- <div class="city-photo city-photo-<%= [i] %>" style="background-image: url(<%= photolink %>)" /></div> -->
 
 <% }; %>
 

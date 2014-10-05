@@ -1,9 +1,9 @@
-@import url(http://fonts.googleapis.com/css?family=Roboto:400,100);
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,700italic,400,700,600);
 
-$font-body: "Roboto", Arial, sans-serif;
-$font-heading: "Roboto", Arial, sans-serif;
+$font-body: "Open Sans", sans-serif;
+$font-heading: "Open Sans", sans-serif;
 
 body {
-    font-family: "Roboto", Arial, sans-serif; 
+    font-family: $font-body; 
     font-size: 16px;
 }

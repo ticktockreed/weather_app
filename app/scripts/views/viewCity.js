@@ -35,13 +35,19 @@ define([
                     console.log('Error', response);
                 }
             });
-            console.log($(this));
-            this.flickrView = new FlickrView({el: $('#' + this.cid + ' .city-pics'), model: this.flickrPics});
+            this.flickrView = new FlickrView({
+                el: $('#' + this.cid + ' .city-pics'), 
+                model: this.flickrPics
+            });
+            $('#content .city').first().addClass('open');
+            $('#content .city').first().height(window.innerHeight - 100);
         },
 
         showForecast: function(ev) {
-            $('.city').removeClass('open');
+            $('.city.open').height('100px');
+            $('.city.open').removeClass('open');
             $(ev.target).parents('.city').addClass('open');
+            $(ev.target).parents('.city').height(window.innerHeight - 100);
         }
     });
 
