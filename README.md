@@ -4,6 +4,19 @@ This app will let you see the weather for selected cities across Europe augmente
 
 The public unauthenticated flikr feed only allows for low res images at different sizes and the feed cannot be relied upon for quality tags.
 
+## To Run Locally
+
+Install required node packages
+
+    npm install
+
+Start a web server and run watch tasks
+
+    grunt serve
+
+You’ll need the dependencies – grunt, node, npm, sass, compass etc.
+
+
 ## Future improvements:
 
 - Share photos
