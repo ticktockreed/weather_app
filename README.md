@@ -2,7 +2,7 @@
 
 This app will let you see the weather for selected cities across Europe augmented with photos tagged with the city's name.
 
-Disclaimer: The public unauthenticated flikr feed only allows for low res images at different sizes and the feed cannot be relied upon for quality tags.
+Disclaimer: The public unauthenticated flikr feed only allows for low res images at different sizes and sepct ratios and the feed cannot be relied upon for quality tags.
 
 ## To Run Locally
 
@@ -28,7 +28,7 @@ You’ll need the dependencies – grunt, node, npm, sass, compass etc.
 - Videos
 - Tech used
 
-## Backbone built using Yeoman generator-backbone
+## Backbone app built using Yeoman generator-backbone
 - SASS
 - RequireJS
 - Weather feed from YQL
